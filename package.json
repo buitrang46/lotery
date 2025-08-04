@@ -1,0 +1,27 @@
+{
+  "name": "simple-lottery",
+  "version": "1.0.0",
+  "description": "A simple and transparent lottery system on Stacks blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "clarinet deploy --devnet",
+    "check": "clarinet check",
+    "console": "clarinet console"
+  },
+  "keywords": [
+    "stacks",
+    "clarity",
+    "blockchain",
+    "lottery",
+    "smart-contract"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "@hirosystems/clarinet-sdk": "^2.3.2",
+    "@stacks/transactions": "^6.5.4",
+    "vitest": "^1.0.4"
+  }
+}

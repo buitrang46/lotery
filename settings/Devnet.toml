@@ -1,0 +1,17 @@
+[network]
+name = "devnet"
+node_rpc_address = "http://localhost:20443"
+deployment_fee_rate = 10
+
+[accounts.deployer]
+mnemonic = "sure sphere cancel link soldier lesson dirt grape off adjust endless whip canvas table whisper muffin opera gaze height filter nice antenna stadium soldier"
+balance = 100_000_000_000_000
+# Address: ST3M4NS2XCB6B10EQF6DX7THB238V4HJ7WTQRA25N
+
+[accounts.wallet_1]
+mnemonic = "sure sphere cancel link soldier lesson dirt grape off adjust endless whip canvas table whisper muffin opera gaze height filter nice antenna stadium soldier"
+balance = 100_000_000_000_000
+
+[accounts.wallet_2]
+mnemonic = "sure sphere cancel link soldier lesson dirt grape off adjust endless whip canvas table whisper muffin opera gaze height filter nice antenna stadium soldier"
+balance = 100_000_000_000_000

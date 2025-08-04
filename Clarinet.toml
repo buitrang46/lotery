@@ -1,0 +1,26 @@
+[project]
+name = "simple-lottery"
+description = "A simple and transparent lottery system on Stacks blockchain"
+authors = ["Developer"]
+telemetry = false
+cache_dir = "./.cache"
+requirements = []
+boot_contracts = []
+
+[contracts.simple-lottery]
+path = "contracts/simple-lottery.clar"
+clarity_version = 2
+epoch = "2.4"
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
