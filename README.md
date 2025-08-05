@@ -1,88 +1,88 @@
 # Simple Lottery
 # Contract Addresses: ST3M4NS2XCB6B10EQF6DX7THB238V4HJ7WTQRA25N.simple-lottery
 
-## Mô tả
-Simple Lottery là một smart contract xổ số đơn giản và minh bạch trên blockchain Stacks. Người dùng có thể mua vé số, hệ thống tự động chọn số thắng cuộc và phân phối giải thưởng một cách công bằng.
+## Description
+Simple Lottery is a simple and transparent lottery smart contract on the Stacks blockchain. Users can buy lottery tickets, the system automatically selects winning numbers and distributes prizes fairly.
 
-## Tính năng chính
-- **Buy Tickets**: Người dùng mua vé số với STX
-- **Random Winner**: Hệ thống tự động chọn người thắng cuộc
-- **Prize Distribution**: Phân phối giải thưởng tự động
-- **Multiple Rounds**: Hỗ trợ nhiều vòng quay liên tiếp
-- **Transparent**: Tất cả giao dịch đều minh bạch trên blockchain
+## Main Features
+- **Buy Tickets**: Users buy lottery tickets with STX
+- **Random Winner**: The system automatically selects winners
+- **Prize Distribution**: Automatic prize distribution
+- **Multiple Rounds**: Supports multiple consecutive spins
+- **Transparent**: All transactions are transparent on the blockchain
 
-## Cấu trúc dự án
+## Project Structure
 ```
-project13_simple_lottery/
+simple_lottery/
 ├── contracts/
-│   └── simple-lottery.clar    # Main lottery contract
+│ └── simple-lottery.clar # Main lottery contract
 ├── tests/
-│   └── simple-lottery_test.ts # Unit tests
+│ └── simple-lottery_test.ts # Unit tests
 ├── scripts/
-│   └── deploy.ts              # Deployment script
-├── Clarinet.toml              # Clarinet configuration
-├── package.json               # Dependencies
-└── README.md                  # Documentation
+│ └── deploy.ts # Deployment script
+├── Clarinet.toml # Clarinet configuration
+├── package.json # Dependencies
+└── README.md # Documentation
 ```
 
-## Cách sử dụng
+## How to use
 
-### 1. Mua vé số
+### 1. Buy lottery tickets
 ```clarity
 (contract-call? .simple-lottery buy-ticket)
 ```
 
-### 2. Kiểm tra thông tin vòng quay hiện tại
+### 2. Check current round information
 ```clarity
 (contract-call? .simple-lottery get-current-round)
 ```
 
-### 3. Xem lịch sử người thắng
+### 3. View winner history
 ```clarity
 (contract-call? .simple-lottery get-winner u1) ;; round 1
 ```
 
 ### 4. Admin Functions
 ```clarity
-;; Kết thúc vòng quay và chọn người thắng
+;; End round and choose winner
 (contract-call? .simple-lottery end-round)
 
-;; Bắt đầu vòng quay mới
+;; Start New Round
 (contract-call? .simple-lottery start-new-round)
 ```
 
-## Thông số kỹ thuật
-- **Ticket Price**: 1 STX mỗi vé
-- **Prize Pool**: 80% tổng tiền vé bán được
-- **House Fee**: 20% cho contract owner
-- **Min Participants**: 2 người tối thiểu mỗi vòng
-- **Random Selection**: Sử dụng block hash để tạo số ngẫu nhiên
+## Specifications
+- **Ticket Price**: 1 STX per ticket
+- **Prize Pool**: 80% of total ticket sales
+- **House Fee**: 20% for contract owner
+- **Min Participants**: Minimum 2 people per round
+- **Random Selection**: Use block hash to generate random numbers
 
 ## Game Flow
-1. **Start Round**: Admin bắt đầu vòng quay mới
-2. **Buy Tickets**: Người dùng mua vé trong thời gian cho phép
-3. **End Round**: Admin kết thúc vòng và chọn winner
-4. **Prize Distribution**: Tự động chuyển tiền thưởng cho winner
-5. **New Round**: Bắt đầu vòng mới
+1. **Start Round**: Admin starts new round
+2. **Buy Tickets**: Users buy tickets within the allowed time
+3. **End Round**: Admin ends round and selects winner
+4. **Prize Distribution**: Automatically transfer prize money to winner
+5. **New Round**: Start new round
 
-## Lợi ích
-1. **Đơn giản**: Logic rõ ràng, dễ hiểu
-2. **Minh bạch**: Tất cả trên blockchain, không thể gian lận
-3. **Tự động**: Phân phối giải thưởng tự động
-4. **Công bằng**: Sử dụng block hash để random
-5. **Hiệu quả**: Code tối ưu, tiết kiệm gas
+## Benefits
+1. **Simple**: Clear logic, easy to understand
+2. **Transparent**: All on blockchain, no cheating
+3. **Automatic**: Distribute prizes automatically
+4. **Fair**: Use block hash to randomize
+5. **Efficient**: Optimized code, save gas
 
 ## Security Features
-- Chỉ admin mới có thể start/end rounds
-- Không thể mua vé khi round đã kết thúc
-- Tự động validate số lượng participants tối thiểu
-- Safe math để tránh overflow
+- Only admin can start/end rounds
+- Cannot buy tickets after round ends
+- Automatically validate minimum number of participants
+- Safe math to avoid overflow
 
 ## Deployment
 1. Clone repository
 2. Run `npm install`
 3. Configure Clarinet settings
-4. Deploy với `clarinet deploy`
+4. Deploy with `clarinet deploy`
 
 ## Testing
 ```bash
