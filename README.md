@@ -1,4 +1,5 @@
-# Project 13: Simple Lottery
+# Simple Lottery
+# Contract Addresses: ST3M4NS2XCB6B10EQF6DX7THB238V4HJ7WTQRA25N.simple-lottery
 
 ## Mô tả
 Simple Lottery là một smart contract xổ số đơn giản và minh bạch trên blockchain Stacks. Người dùng có thể mua vé số, hệ thống tự động chọn số thắng cuộc và phân phối giải thưởng một cách công bằng.
